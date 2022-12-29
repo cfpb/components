@@ -3,8 +3,8 @@
 This project is in progress, pre-alpha.
 See [our design system](https://github.com/cfpb/design-system) for production use.
 
-## Installation
-yarn
+### Installation
+`yarn`
 
-## Running locally
-yarn start
+### Running locally
+`yarn start`
