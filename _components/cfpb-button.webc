@@ -91,4 +91,6 @@ button:disabled,
 }`
 </style>
 
-<button :class="type" :disabled="type == 'disabled'"><slot>Default</slot></button>
+<template webc:root>
+  <button :class="type" :disabled="type == 'disabled'"><slot>Default</slot></button>
+</template>
