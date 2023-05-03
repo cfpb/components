@@ -7,6 +7,6 @@ jobs:
         with:
           command: cp
           source: ./index.webc
-          destination: s3://cf.gov-build/frontend/${{ GITHUB_SHA }}
+          destination: s3://cf.gov-build/frontend/${{ env.GITHUB_SHA }}
           aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
