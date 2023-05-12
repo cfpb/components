@@ -10,6 +10,7 @@ jobs:
         with:
           workflow: upload.yml
           commit: ${{ github.sha }}
+          name: test_${{ github.sha }}
 
       - name: Display structure of downloaded files
         run: ls -R
