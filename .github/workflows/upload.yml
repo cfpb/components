@@ -1,15 +1,13 @@
 name: 'Upload'
 on: workflow_dispatch
 jobs:
+
   upload:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: keithweaver/aws-s3-github-action@v1.0.0
+      - name: Upload artifact
+      - run: echo hello > world.txt
+        uses: actions/upload-artifact@v3
         with:
-          command: cp
-          source: ./index.webc
-          destination: s3://cf.gov-build/frontend/b #/${{ env.GITHUB_SHA }}
-          aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws_region: us-east-1
+          name: test_{{ github_sha }}
+          path: world.txt
