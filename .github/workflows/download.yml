@@ -2,7 +2,7 @@ name: 'Download'
 on: workflow_dispatch
 jobs:
 
-  upload:
+  Download:
     runs-on: ubuntu-latest
     steps:
       - name: Download artifact
