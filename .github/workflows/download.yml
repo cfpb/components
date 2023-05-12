@@ -1,0 +1,14 @@
+name: 'Upload'
+on: workflow_dispatch
+jobs:
+
+  upload:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Upload artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: test_${{ github.sha }}
+
+      - name: Display structure of downloaded files
+        run: ls -R
