@@ -1,4 +1,4 @@
-name: 'Upload'
+name: 'Download'
 on: workflow_dispatch
 jobs:
 
