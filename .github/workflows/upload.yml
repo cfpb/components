@@ -5,8 +5,10 @@ jobs:
   upload:
     runs-on: ubuntu-latest
     steps:
+      - name: Create test file
+        runs: echo hello > world.txt
+
       - name: Upload artifact
-        run: echo hello > world.txt
         uses: actions/upload-artifact@v3
         with:
           name: test_{{ github_sha }}
