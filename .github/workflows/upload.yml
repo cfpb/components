@@ -8,8 +8,11 @@ jobs:
       - name: Create test file
         run: echo hello > world.txt
 
+      - name: Zip it
+        run: zip argle.zip world.txt
+
       - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
           name: test_${{ github.sha }}
-          path: world.txt
+          path: argle.zip

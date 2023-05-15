@@ -5,9 +5,6 @@ jobs:
   Download:
     runs-on: ubuntu-latest
     steps:
-      - name: test unzip
-        run: unzip fake
-
       - name: Download artifact
         uses: dawidd6/action-download-artifact@v2.27.0
         with:
@@ -15,5 +12,8 @@ jobs:
           commit: ${{ github.sha }}
           name: test_${{ github.sha }}
 
-      - name: Display structure of downloaded files
+      - name: Unzip it
+        run: unzip argle.zip
+
+      - name: Show results
         run: ls -R
