@@ -6,10 +6,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Create test file
-        run: echo hello > world.txt
+        run: mkdir bargle && echo hello > bargle/world.txt
 
       - name: Zip it
-        run: zip argle.zip world.txt
+        run: zip argle.zip bargle/world.txt
 
       - name: Upload artifact
         uses: actions/upload-artifact@v3
