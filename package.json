@@ -1,24 +1,39 @@
 {
-  "name": "@cfpb/webc",
+  "name": "cfpb-components",
   "version": "0.0.1",
-  "description": "cfpb webc design system",
-  "scripts": {
-    "build": "npx @11ty/eleventy",
-    "start": "npx @11ty/eleventy --serve --incremental"
-  },
+  "description": "Stencil Component Starter",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.js",
+  "es2015": "dist/esm/index.mjs",
+  "es2017": "dist/esm/index.mjs",
+  "types": "dist/types/index.d.ts",
+  "collection": "dist/collection/collection-manifest.json",
+  "collection:main": "dist/collection/index.js",
+  "unpkg": "dist/cfpb-components/cfpb-components.esm.js",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/ionic-team/stencil-component-starter.git"
   },
-  "keywords": [
-    "webc"
+  "files": [
+    "dist/",
+    "loader/"
   ],
-  "license": "CC0-1.0",
-  "dependencies": {},
+  "scripts": {
+    "build": "stencil build --docs",
+    "start": "stencil build --dev --watch --serve",
+    "test": "stencil test --spec --e2e",
+    "test.watch": "stencil test --spec --e2e --watchAll",
+    "generate": "stencil generate"
+  },
+  "dependencies": {
+    "@stencil/core": "^4.0.0"
+  },
   "devDependencies": {
-    "@11ty/eleventy": "2.0.0-canary.23",
-    "@11ty/eleventy-plugin-webc": "0.8.1",
-    "eslint": "8.29.0",
-    "eslint-config-prettier": "8.5.0"
-  }
+    "@types/jest": "^27.5.2",
+    "@types/node": "^16.18.11",
+    "jest": "^27.5.1",
+    "jest-cli": "^27.5.1",
+    "puppeteer": "^21.0.3"
+  },
+  "license": "MIT"
 }
