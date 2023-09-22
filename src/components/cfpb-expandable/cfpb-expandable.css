@@ -1,0 +1,211 @@
+.cf-icon-svg {
+  height: 1.1875em;
+  vertical-align: text-top;
+  fill: currentcolor;
+}
+
+.o-expandable {
+  position: relative;
+}
+
+.o-expandable_header {
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.o-expandable_header:focus {
+  outline: 1px dotted black;
+  outline-offset: 1px;
+}
+
+.o-expandable_cue-close,
+.o-expandable_cue-open {
+  display: none;
+}
+
+button[aria-expanded='false'] .o-expandable_cue-open {
+  display: block;
+}
+
+button[aria-expanded='true'] .o-expandable_cue-close {
+  display: block;
+}
+
+button& {
+  width: 100%;
+  text-align: left;
+}
+
+.o-expandable_label {
+  flex-grow: 1;
+
+  margin-bottom: 0;
+  color: black;
+  font-weight: 500;
+}
+
+.o-expandable_cue {
+    min-width: 60px;
+    text-align: right;
+    color: #0072ce;
+    font-size: 1em;
+    line-height: 1;
+  }
+
+    .o-expandable__padded .o-expandable_header {
+      padding: 0.625em
+        0.9375em;
+    }
+
+    .o-expandable__padded .o-expandable_content {
+      padding: 0.9375em;
+      padding-top: 0;
+    }
+
+    .o-expandable__padded .o-expandable_content::before {
+        content: '';
+        display: block;
+        border-top: 1px solid #b4b5b6;
+        padding-top: 0.9375em;
+      }
+
+      .o-expandable__padded .o-expandable_content::after {
+        padding-bottom: 0.9375em;
+        width: 100%;
+      }
+
+  .o-expandable__background {
+    background: #f7f8f9;
+  }
+
+  .o-expandable__border {
+    border: 1px solid #b4b5b6;
+  }
+
+
+/** Original Component Style **/
+
+:host {
+  display: block;
+  border: 1px solid #b4b5b6;
+  background: #f7f8f9;
+  font-family: "Avenir Next", Arial, sans-serif;
+}
+
+:host(:not(:last-child)) {
+  margin-bottom: 0.8rem;
+}
+
+:host(:last-child) {
+  margin-bottom: 0.5rem;
+}
+
+:host(:not([open])) #content,
+:host([open='false']) #content {
+  display: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+button {
+  /*cursor: pointer;
+  width: 100%;
+  border: 0;
+  text-align: left;
+  font-family: var(--font-source-sans);
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1;
+  padding: 1.5rem 5.5rem 1.5rem 2rem;
+  background-color: lightgray;
+  background-image: url('../../assets/minus.svg');
+  background-position: right 2rem center;
+  background-repeat: no-repeat;
+  background-size: 1.5rem;
+  display: block;
+  */
+  /* This color assignment is for IE11 compatibility - the one in */
+  /* the va-accordion's CSS with `:host` doesn't work well */
+  /*color: gray;*/
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+  width: 100%;
+  padding: 0.625em 0.9375em;
+  text-align: left;
+  font-size: 18px;
+}
+/*
+button:not(.usa-accordion__button):hover {
+  background-color: lightgray;*/
+  /* This color assignment is for IE11 compatibility - the one in */
+  /* the va-accordion's CSS with `:host` doesn't work well */
+  /*color: gray;
+}*/
+
+#content::before {
+  content: '';
+  display: block;
+  border-top: 1px solid #b4b5b6;
+  padding-top: 0.9375em;
+}
+
+#content {
+  padding: 0.9375em;
+  padding-top: 0;
+}
+
+/*#content:not(.usa-accordion__content) {
+  background-color: white;
+  overflow: auto;
+  padding: 1.5rem 2rem;
+  border-left: black;
+  border-right: black;
+  border-bottom: black;
+  overflow-wrap: break-word;
+}*/
+
+button[aria-expanded='false']:not(.usa-accordion__button) {
+  background-image: url('../../assets/plus.svg');
+}
+
+.header-text {
+  display: flex;
+}
+
+p.subheader {
+  font-weight: 400;
+  line-height: 26px;
+  margin: 0;
+  margin-top: 0.25rem;
+  display: flex;
+}
+
+/* Hiding since element would be duplicated via the Shadow DOM */
+::slotted([slot='headline']) {
+  display: none;
+}
+
+::slotted([slot='icon']),
+::slotted([slot='subheader-icon']){
+  width: 1rem;
+  margin-right: 1.5rem;
+}
+
+::slotted([slot='subheader-icon']) {
+  margin-top: 0.5rem;
+}
